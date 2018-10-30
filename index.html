@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="style.css">
+  <SCRIPT LANGUAGE="JavaScript" SRC="keyboard.js"></SCRIPT> 
+  <title>Document</title>
+</head>
+<body>
+
+  <select id="combo-box">
+    <option></option>
+    <option value="Setar obstáculos">Setar obstáculos</option>
+    <option value="Posicionar robô">Posicionar robô</option>
+    <option value="Definir destino">Definir destino</option>
+  </select>
+
+  <section id='movimentaRobo'>
+    <button id="btnCima">Subir</button>
+    <button id="btnBaixo">Descer</button>
+    <button id="btnEsquerda">Esquerda</button>
+    <button id="btnDireita">Direita</button>
+  </section>
+
+  <div class="container" id="configura-start">
+    <button id="btnConfigurar">Configurar</button>
+    <button id="btnStart">Start</button>
+  </div>
+     
+ 
+
+  <div class="sala">
+    <!-- data-i e data-j - COORDENADA DA BOX -->
+    <!-- i - linha ; j - coluna -->
+    
+    <!-- numeracao colunas -->
+    <div class="coordenadas"></div>
+    <div class="coordenadas">0</div>
+    <div class="coordenadas">1</div>
+    <div class="coordenadas">2</div>
+    <div class="coordenadas">3</div>
+    <div class="coordenadas">4</div>
+    <div class="coordenadas">5</div>
+    <div class="coordenadas">6</div>
+    <div class="coordenadas">7</div>
+    <div class="coordenadas">8</div>
+    <div class="coordenadas">9</div>
+    <div class="coordenadas">10</div>
+    <div class="coordenadas">11</div>
+    <div class="coordenadas">12</div>
+    <div class="coordenadas">13</div>
+    
+    <!-- linha 0 -->
+    <div class="coordenadas">0</div>
+    <div class="box" data-i=0 data-j=0></div>
+    <div class="box" data-i=0 data-j=1></div>
+    <div class="box" data-i=0 data-j=2></div>
+    <div class="box" data-i=0 data-j=3></div>
+    <div class="box" data-i=0 data-j=4></div>
+    <div class="box" data-i=0 data-j=5></div>
+    <div class="box" data-i=0 data-j=6></div>
+    <div class="box" data-i=0 data-j=7></div>
+    <div class="box" data-i=0 data-j=8></div>
+    <div class="box" data-i=0 data-j=9></div>
+    <div class="box" data-i=0 data-j=10></div>
+    <div class="box" data-i=0 data-j=11></div>
+    <div class="box" data-i=0 data-j=12></div>
+    <div class="box" data-i=0 data-j=13></div>
+
+    <!-- linha 1 -->
+    <div class="coordenadas">1</div>
+    <div class="box" data-i=1 data-j=0></div>
+    <div class="box" data-i=1 data-j=1></div>
+    <div class="box" data-i=1 data-j=2></div>
+    <div class="box" data-i=1 data-j=3></div>
+    <div class="box" data-i=1 data-j=4></div>
+    <div class="box" data-i=1 data-j=5></div>
+    <div class="box" data-i=1 data-j=6></div>
+    <div class="box" data-i=1 data-j=7></div>
+    <div class="box" data-i=1 data-j=8></div>
+    <div class="box" data-i=1 data-j=9></div>
+    <div class="box" data-i=1 data-j=10></div>
+    <div class="box" data-i=1 data-j=11></div>
+    <div class="box" data-i=1 data-j=12></div>
+    <div class="box" data-i=1 data-j=13></div>
+
+    <!-- linha 2 -->
+    <div class="coordenadas">2</div>
+    <div class="box" data-i=2 data-j=0></div>
+    <div class="box" data-i=2 data-j=1></div>
+    <div class="box" data-i=2 data-j=2></div>
+    <div class="box" data-i=2 data-j=3></div>
+    <div class="box" data-i=2 data-j=4></div>
+    <div class="box" data-i=2 data-j=5></div>
+    <div class="box" data-i=2 data-j=6></div>
+    <div class="box" data-i=2 data-j=7></div>
+    <div class="box" data-i=2 data-j=8></div>
+    <div class="box" data-i=2 data-j=9></div>
+    <div class="box" data-i=2 data-j=10></div>
+    <div class="box" data-i=2 data-j=11></div>
+    <div class="box" data-i=2 data-j=12></div>
+    <div class="box" data-i=2 data-j=13></div>
+
+    <!-- linha 3 -->
+    <div class="coordenadas">3</div>
+    <div class="box" data-i=3 data-j=0></div>
+    <div class="box" data-i=3 data-j=1></div>
+    <div class="box" data-i=3 data-j=2></div>
+    <div class="box" data-i=3 data-j=3></div>
+    <div class="box" data-i=3 data-j=4></div>
+    <div class="box" data-i=3 data-j=5></div>
+    <div class="box" data-i=3 data-j=6></div>
+    <div class="box" data-i=3 data-j=7></div>
+    <div class="box" data-i=3 data-j=8></div>
+    <div class="box" data-i=3 data-j=9></div>
+    <div class="box" data-i=3 data-j=10></div>
+    <div class="box" data-i=3 data-j=11></div>
+    <div class="box" data-i=3 data-j=12></div>
+    <div class="box" data-i=3 data-j=13></div>
+
+    <!-- linha 4 -->
+    <div class="coordenadas">4</div>
+    <div class="box" data-i=4 data-j=0></div>
+    <div class="box" data-i=4 data-j=1></div>
+    <div class="box" data-i=4 data-j=2></div>
+    <div class="box" data-i=4 data-j=3></div>
+    <div class="box" data-i=4 data-j=4></div>
+    <div class="box" data-i=4 data-j=5></div>
+    <div class="box" data-i=4 data-j=6></div>
+    <div class="box" data-i=4 data-j=7></div>
+    <div class="box" data-i=4 data-j=8></div>
+    <div class="box" data-i=4 data-j=9></div>
+    <div class="box" data-i=4 data-j=10></div>
+    <div class="box" data-i=4 data-j=11></div>
+    <div class="box" data-i=4 data-j=12></div>
+    <div class="box" data-i=4 data-j=13></div>
+
+    <!-- linha 5 -->
+    <div class="coordenadas">5</div>
+    <div class="box" data-i=5 data-j=0></div>
+    <div class="box" data-i=5 data-j=1></div>
+    <div class="box" data-i=5 data-j=2></div>
+    <div class="box" data-i=5 data-j=3></div>
+    <div class="box" data-i=5 data-j=4></div>
+    <div class="box" data-i=5 data-j=5></div>
+    <div class="box" data-i=5 data-j=6></div>
+    <div class="box" data-i=5 data-j=7></div>
+    <div class="box" data-i=5 data-j=8></div>
+    <div class="box" data-i=5 data-j=9></div>
+    <div class="box" data-i=5 data-j=10></div>
+    <div class="box" data-i=5 data-j=11></div>
+    <div class="box" data-i=5 data-j=12></div>
+    <div class="box" data-i=5 data-j=13></div>
+
+    <!-- linha 6 -->
+    <div class="coordenadas">6</div>
+    <div class="box" data-i=6 data-j=0></div>
+    <div class="box" data-i=6 data-j=1></div>
+    <div class="box" data-i=6 data-j=2></div>
+    <div class="box" data-i=6 data-j=3></div>
+    <div class="box" data-i=6 data-j=4></div>
+    <div class="box" data-i=6 data-j=5></div>
+    <div class="box" data-i=6 data-j=6></div>
+    <div class="box" data-i=6 data-j=7></div>
+    <div class="box" data-i=6 data-j=8></div>
+    <div class="box" data-i=6 data-j=9></div>
+    <div class="box" data-i=6 data-j=10></div>
+    <div class="box" data-i=6 data-j=11></div>
+    <div class="box" data-i=6 data-j=12></div>
+    <div class="box" data-i=6 data-j=13></div>
+
+    <!-- linha 7 -->
+    <div class="coordenadas">7</div>
+    <div class="box" data-i=7 data-j=0></div>
+    <div class="box" data-i=7 data-j=1></div>
+    <div class="box" data-i=7 data-j=2></div>
+    <div class="box" data-i=7 data-j=3></div>
+    <div class="box" data-i=7 data-j=4></div>
+    <div class="box" data-i=7 data-j=5></div>
+    <div class="box" data-i=7 data-j=6></div>
+    <div class="box" data-i=7 data-j=7></div>
+    <div class="box" data-i=7 data-j=8></div>
+    <div class="box" data-i=7 data-j=9></div>
+    <div class="box" data-i=7 data-j=10></div>
+    <div class="box" data-i=7 data-j=11></div>
+    <div class="box" data-i=7 data-j=12></div>
+    <div class="box" data-i=7 data-j=13></div>
+    
+  </div>
+  
+  <!-- CONFIGURACAO DA SALA COM BOTOES
+    <button class="btn-config-sala">Setar obstáculos</button>
+      <button class="btn-config-sala">Posicionar robô</button>
+      <button class="btn-config-sala">Definir destino</button>
+      <button class="btn-config-sala">Resolver problema</button>
+      <button class="btn-config-sala">Visualizar solução</button>
+      <div class="salva-config">
+        <button class="btn" id="btn-salvar">Salvar</button>
+        <button class="btn" id="btn-cancelar">Cancelar</button>
+      </div> -->
+  <script src="app.js"></script>
+  <script language="javascript"> 
+    document.onkeydown = applyKey; 
+  </script> 
+</body>
+</html>

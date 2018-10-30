@@ -1,0 +1,94 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-image: radial-gradient(#858fa0, #616977, #282e38);
+}
+
+select {
+  margin: 2em auto;
+  display: block;
+  /* margin-top: 1em; */
+}
+
+.sala {
+  margin: 3em auto;
+  width: 700px;
+  height: 400px;
+  display: grid;
+  justify-items: center;
+  grid-template-columns: repeat(15, 50px);
+  grid-template-rows: repeat(8, 50px);
+}
+
+.box {
+  width: 50px;
+  height: 50px;
+  border: 2px dashed #b9e26c;
+  cursor: pointer;
+  /* background: transparent; O JAVASCRIPT N ENXERGA ESSA COISA */ 
+}
+
+#robot {
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+  background-color: #000000;
+}
+
+/* numeracao das colunas */
+.coordenadas {
+  color: #b9e26c;
+  opacity: 0.6;
+  font-size: 20px;
+  align-self: end;
+  padding-bottom: 5px;
+}
+#movimentaRobo {
+  margin: 2em auto;
+  display: block;
+}
+
+#configura-start {
+  align-items: center;
+}
+
+/* 
+.config-sala {
+  text-align: center;
+}
+
+.config-sala {
+  padding: .7em;
+  background: #567ab5;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+}
+/* style do btn desabilitado */
+/*
+.config-sala button:disabled,
+button[disabled] {
+  border: 1px solid #999999;
+  background-color: #cccccc;
+  color: #666666;
+}
+
+.btn {
+  color: #fff;
+}
+
+#btn-cancelar {
+  background-color: red;
+}
+
+#btn-salvar {
+  background-color: green;
+}
+
+.salva-config {
+  margin-top: 1em;
+  display: none;
+} 
