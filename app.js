@@ -17,6 +17,7 @@ let btnEsquerda = document.querySelector('#btnEsquerda');
 let btnDireita = document.querySelector('#btnDireita');
 let btnStart = document.querySelector('#btnStart');
 let btnConfigurar = document.querySelector('#btnConfigurar');
+let btnReset = document.querySelector('#btnReset');
 
 btnCima.addEventListener('click', moverCima);
 btnBaixo.addEventListener('click', moverBaixo);
@@ -24,9 +25,12 @@ btnEsquerda.addEventListener('click', moverEsquerda);
 btnDireita.addEventListener('click', moverDireita);
 btnStart.addEventListener('click', start);
 btnConfigurar.addEventListener('click', configurar);
+btnReset.addEventListener('click', resetar);
 
+document.getElementById("btnReset").style.display="none";
 document.getElementById("movimentaRobo").style.display = "none";
 movimentaTeclado();
+
 //Evento para movimentar robo pelo teclado
 function movimentaTeclado() {
   document.addEventListener('keydown', function (event) {
@@ -293,11 +297,7 @@ function moverCima(){
     proxPosicao[1] = posicaoRobo[1];
 
     if(verificaObstaculo(proxPosicao)){
-      document.querySelector(`[data-i="${posicaoRobo[0]}"][data-j="${posicaoRobo[1]}"]`).style.backgroundColor = 'transparent';
-      posicaoRobo = proxPosicao;
-      posicaoRoboAnterior = posicaoRobo;
-      rota.push(posicaoRobo);
-      document.querySelector(`[data-i="${posicaoRobo[0]}"][data-j="${posicaoRobo[1]}"]`).style.backgroundColor = 'lightblue';
+      executaMovimento(proxPosicao)
     }
   }
 }
@@ -309,11 +309,7 @@ function moverBaixo() {
     proxPosicao[1] = posicaoRobo[1];
     
     if(verificaObstaculo(proxPosicao)) {
-      document.querySelector(`[data-i="${posicaoRobo[0]}"][data-j="${posicaoRobo[1]}"]`).style.backgroundColor = 'transparent';
-      posicaoRobo = proxPosicao;
-      posicaoRoboAnterior = posicaoRobo;
-      rota.push(posicaoRobo);
-      document.querySelector(`[data-i="${posicaoRobo[0]}"][data-j="${posicaoRobo[1]}"]`).style.backgroundColor = 'lightblue';
+      executaMovimento(proxPosicao)
     }
   }
 }
@@ -325,11 +321,7 @@ function moverEsquerda() {
     proxPosicao[1] = posicaoRobo [1] - 1;
 
     if(verificaObstaculo(proxPosicao)) {
-      document.querySelector(`[data-i="${posicaoRobo[0]}"][data-j="${posicaoRobo[1]}"]`).style.backgroundColor = 'transparent';
-      posicaoRobo = proxPosicao;
-      posicaoRoboAnterior = posicaoRobo;
-      rota.push(posicaoRobo);
-      document.querySelector(`[data-i="${posicaoRobo[0]}"][data-j="${posicaoRobo[1]}"]`).style.backgroundColor = 'lightblue';
+      executaMovimento(proxPosicao)
     }
   }
 }
@@ -342,12 +334,24 @@ function moverDireita() {
     proxPosicao[1] = Number(posicaoRobo[1]) + 1;
 
     if(verificaObstaculo(proxPosicao)) {
-      document.querySelector(`[data-i="${posicaoRobo[0]}"][data-j="${posicaoRobo[1]}"]`).style.backgroundColor = 'transparent';
-      posicaoRobo = proxPosicao;
-      posicaoRoboAnterior = posicaoRobo;
-      rota.push(posicaoRobo);
-      document.querySelector(`[data-i="${posicaoRobo[0]}"][data-j="${posicaoRobo[1]}"]`).style.backgroundColor = 'lightblue';
+      executaMovimento(proxPosicao);
     }
+  }
+}
+
+function executaMovimento(proxPosicao){
+  document.querySelector(`[data-i="${posicaoRobo[0]}"][data-j="${posicaoRobo[1]}"]`).style.backgroundColor = 'transparent';
+  posicaoRobo = proxPosicao;
+  posicaoRoboAnterior = posicaoRobo;
+  rota.push(posicaoRobo);
+  document.querySelector(`[data-i="${posicaoRobo[0]}"][data-j="${posicaoRobo[1]}"]`).style.backgroundColor = 'lightblue';
+
+  if(String(posicaoRobo) === String(destino)){
+    alert ("Parabéns! Você chegou ao seu destino\nVocê andaou " + rota.length + " posições");
+    document.getElementById("movimentaRobo").style.display="none";
+    document.getElementById("combo-box").style.display="none";
+    document.getElementById("configura-start").style.display="none";
+    document.getElementById("btnReset").style.display="block";
   }
 }
 
@@ -374,7 +378,9 @@ function configurar(){
   document.getElementById("combo-box").style.display="block";
 }
 
-
+function resetar(){
+  location.reload();
+}
 /* ********************************* CONFIGURACAO ANTIGA DA SALA ******************************* */
 
 // Configuracao da sala
